@@ -16,8 +16,13 @@ public class eight_ball extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.eight_ball);
-    }
 
-    TextView tvAnswer = findViewById(R.id.tvAnswer);
-    Button btnAsk = findViewById(R.id.btnAsk);
+        TextView tvAnswer = findViewById(R.id.tvAnswer);
+        Button btnAsk = findViewById(R.id.btnAsk);
+
+        btnAsk.setOnClickListener(v-> {
+            int index = new Random().nextInt(responses.length);
+            tvAnswer.setText(responses[index]);
+        });
+    }
 }

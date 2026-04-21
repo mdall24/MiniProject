@@ -20,6 +20,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".eight_ball"
+            android:exported="false"/>
+        <activity
+            android:name=".fortune_teller"
+            android:exported="false"
+            />
     </application>
 
 </manifest>
