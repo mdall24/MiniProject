@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">MiniProject</string>
     <string name="ask">Ask Your Question!</string>
-    <string name="type">Type</string>
+    <string name="type">Type...</string>
     <string name="or">or</string>
     <string name="talk">Talk</string>
 </resources>
