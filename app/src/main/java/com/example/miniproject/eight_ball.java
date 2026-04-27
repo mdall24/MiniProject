@@ -7,16 +7,12 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.List;
 import java.util.Random;
 private SensorManager mSensorManager;
 private Sensor mSensor;
-mSensorManager=(SensorManager)getSystemService(Context.SENSOR_SERVICE);
-if(mSensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY)!=null){
-    // Success!
-        }
-else {
-    // Failure!!
-        }
+
 
 
 public class eight_ball extends AppCompatActivity {
@@ -38,5 +34,18 @@ public class eight_ball extends AppCompatActivity {
             int index = new Random().nextInt(responses.length);
             tvAnswer.setText(responses[index]);
         });
+        mSensorManager=(SensorManager)getSystemService(Context.SENSOR_SERVICE);
+        if(mSensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY)!=null){
+            List<Sensor> gravSensor = mSensorManager.getSensorList(Sensor.TYPE_GRAVITY);
+            for(int i = 0; i < gravSensor.size(); i++){
+                if((gravSensor.get(i).getVendor().contains("Google")) && (gravSensor.get(i).getVersion() == 3)){
+                    mSensor = gravSensor.get(i);
+                    break;
+                }
+            }
+        }
+        else if(mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)!=null){
+                mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+            }
+        }
     }
-}
