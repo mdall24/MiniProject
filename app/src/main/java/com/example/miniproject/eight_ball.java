@@ -12,7 +12,7 @@ public class eight_ball extends AppCompatActivity {
 
 
     private final String[] responses = {
-            "Yes", "No",
+            "Maybe", "Possibly", "Perchance", "Mayhaps", "Perhaps", "No", "Definitely Not", "Negatory", "Never", "Nope","Yes", "Guaranteed", "100 %", "Sure", "Certainly"
     };
 
     @Override
