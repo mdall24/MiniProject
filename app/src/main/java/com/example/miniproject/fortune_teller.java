@@ -6,6 +6,7 @@ import android.speech.RecognizerIntent;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -15,13 +16,16 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.Random;
 
 public class fortune_teller extends AppCompatActivity {
     private static final int SPEECH_REQUEST_CODE = 100;
     private TextView cancel;
-
     private final String[] fortunes = {
             "Something good is coming your way!",
             "A new opportunity will present itself to you soon.",
@@ -36,14 +40,21 @@ public class fortune_teller extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.fortune_teller);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        Button talk = findViewById(R.id.talk);
+        FloatingActionButton talk = findViewById(R.id.talk);
         talk.setOnClickListener(v -> startSpeech());
+
+        cancel = findViewById(R.id.back);
+        cancel.setOnClickListener(view -> {
+            Intent intent = new Intent(fortune_teller.this, MainActivity.class);
+            startActivity(intent);
+        });
     }
     private void startSpeech(){
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
@@ -71,10 +82,5 @@ public class fortune_teller extends AppCompatActivity {
 
             Toast.makeText(this, fortune, Toast.LENGTH_LONG).show();
         }
-        cancel = findViewById(R.id.back);
-        cancel.setOnClickListener(v -> {
-        Intent intent = new Intent(fortune_teller.this, MainActivity.class);
-        startActivity(intent);
-    });
     }
 }
