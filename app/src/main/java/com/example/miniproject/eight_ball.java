@@ -1,11 +1,22 @@
 package com.example.miniproject;
 
+import android.content.Context;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.Random;
-
+private SensorManager mSensorManager;
+private Sensor mSensor;
+mSensorManager = (SensorManager) getSystemService (Context.SENSOR_SERVICE);
+if(mSensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY) != null){
+    // Success!
+        }
+else {
+    // Failure!!
+        }
 
 
 public class eight_ball extends AppCompatActivity {
