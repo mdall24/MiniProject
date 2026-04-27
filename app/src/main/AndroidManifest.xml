@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MiniProject">
         <activity
+            android:name=".eight_ball"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -21,12 +24,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".eight_ball"
-            android:exported="false"/>
-        <activity
             android:name=".fortune_teller"
-            android:exported="false"
-            />
+            android:exported="false" />
     </application>
 
 </manifest>
