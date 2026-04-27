@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -19,6 +20,8 @@ import java.util.Random;
 
 public class fortune_teller extends AppCompatActivity {
     private static final int SPEECH_REQUEST_CODE = 100;
+    private TextView cancel;
+
     private final String[] fortunes = {
             "Something good is coming your way!",
             "A new opportunity will present itself to you soon.",
@@ -68,5 +71,10 @@ public class fortune_teller extends AppCompatActivity {
 
             Toast.makeText(this, fortune, Toast.LENGTH_LONG).show();
         }
+        cancel = findViewById(R.id.back);
+        cancel.setOnClickListener(v -> {
+        Intent intent = new Intent(fortune_teller.this, MainActivity.class);
+        startActivity(intent);
+    });
     }
 }

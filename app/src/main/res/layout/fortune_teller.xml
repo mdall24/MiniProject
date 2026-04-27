@@ -9,38 +9,53 @@
 
     <TextView
         android:id="@+id/askQ"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="170dp"
+        android:layout_height="31dp"
         android:text="@string/ask"
-        tools:layout_editor_absoluteX="140dp"
-        tools:layout_editor_absoluteY="50dp" />
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="107dp" />
 
     <EditText
         android:id="@+id/typeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="text"
         android:hint="@string/type"
+        android:inputType="text"
         tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="129dp" />
+        tools:layout_editor_absoluteY="250dp" />
 
     <TextView
-        android:id="@+id/or"
+        android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/or"
-        tools:layout_editor_absoluteX="199dp"
-        tools:layout_editor_absoluteY="214dp" />
+        android:layout_marginBottom="188dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/back"
+        android:textColor="#9B9898"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/talk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="Talk"
         app:backgroundTint="@android:color/holo_blue_dark"
         app:srcCompat="@drawable/microphone"
         tools:layout_editor_absoluteX="177dp"
-        tools:layout_editor_absoluteY="272dp"
-        android:contentDescription="Talk"/>
+        tools:layout_editor_absoluteY="424dp" />
+
+    <TextView
+        android:id="@+id/or"
+        android:layout_width="26dp"
+        android:layout_height="30dp"
+        android:text="@string/or"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="192dp"
+        tools:layout_editor_absoluteY="350dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
