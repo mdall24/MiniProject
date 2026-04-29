@@ -17,7 +17,7 @@ import java.util.Random;
 public class eight_ball extends AppCompatActivity implements SensorEventListener {
     private SensorManager sensorManager;
     private Sensor gravitySensor;
-    private TextView tvAnswer; // moved to field
+    private TextView tvAnswer; 
 
     private final String[] responses = {
             "Maybe", "Possibly", "Perchance", "Mayhaps", "Perhaps",
@@ -37,10 +37,8 @@ public class eight_ball extends AppCompatActivity implements SensorEventListener
             Toast.makeText(this, "Gravity sensor not available on this device", Toast.LENGTH_LONG).show();
             finish();
         }
-
-        tvAnswer = findViewById(R.id.tvAnswer); // now a field
+        tvAnswer = findViewById(R.id.tvAnswer);
         Button btnAsk = findViewById(R.id.btnAsk);
-
         btnAsk.setOnClickListener(v -> showRandomResponse());
     }
 
