@@ -13,49 +13,62 @@
         android:layout_height="31dp"
         android:text="@string/ask"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="120dp"
-        tools:layout_editor_absoluteY="107dp" />
+        app:layout_constraintBottom_toTopOf="@+id/typeText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/typeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="235dp"
+        android:layout_height="60dp"
         android:ems="10"
         android:hint="@string/type"
         android:inputType="text"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="250dp" />
+        app:layout_constraintBottom_toTopOf="@+id/talk"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="188dp"
+        android:layout_width="88dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="132dp"
         android:clickable="true"
         android:focusable="true"
         android:text="@string/back"
         android:textColor="#9B9898"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.569"
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/talk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
         android:contentDescription="Talk"
         app:backgroundTint="@android:color/holo_blue_dark"
-        app:srcCompat="@drawable/microphone"
-        tools:layout_editor_absoluteX="177dp"
-        tools:layout_editor_absoluteY="424dp" />
+        app:layout_constraintBottom_toTopOf="@+id/back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/microphone" />
 
     <TextView
         android:id="@+id/or"
         android:layout_width="26dp"
         android:layout_height="30dp"
+        android:layout_marginTop="161dp"
         android:text="@string/or"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="192dp"
-        tools:layout_editor_absoluteY="350dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/talk"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/typeText"
+        app:layout_constraintVertical_bias="0.156" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
