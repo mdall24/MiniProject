@@ -20,17 +20,18 @@
 
     <TextView
         android:id="@+id/tvFortune"
-        android:layout_width="340dp"
-        android:layout_height="114dp"
+        android:layout_width="150dp"
+        android:layout_height="104dp"
         android:gravity="center"
+        android:maxLines="4"
         android:text="@string/ask"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/typeText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.15" />
+        app:layout_constraintVertical_bias="0.251" />
 
     <EditText
         android:id="@+id/typeText"
@@ -44,7 +45,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btnConfirm"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvFortune" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"/>
 
     <Button
         android:id="@+id/btnConfirm"
