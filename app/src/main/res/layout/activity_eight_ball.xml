@@ -28,4 +28,18 @@
         android:layout_height="wrap_content"
         android:text="Ask the 8-Ball" />
 
+    <TextView
+        android:id="@+id/backBall"
+        android:layout_width="69dp"
+        android:layout_height="29dp"
+        android:layout_marginBottom="132dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/back"
+        android:textColor="#9B9898"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.569"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </LinearLayout>

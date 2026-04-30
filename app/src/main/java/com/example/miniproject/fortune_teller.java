@@ -9,16 +9,11 @@ import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -26,6 +21,10 @@ import java.util.Random;
 public class fortune_teller extends AppCompatActivity {
     private static final int SPEECH_REQUEST_CODE = 100;
     private TextView cancel;
+
+    private TextView tvFortune;
+
+    private Button btnConfirm;
     private final String[] fortunes = {
             "Something good is coming your way!",
             "A new opportunity will present itself to you soon.",
@@ -52,6 +51,9 @@ public class fortune_teller extends AppCompatActivity {
             return insets;
         });
 
+        Button btnConfirm = findViewById(R.id.btnConfirm);
+        tvFortune = findViewById(R.id.tvFortune);
+
         FloatingActionButton talk = findViewById(R.id.talk);
         talk.setOnClickListener(v -> startSpeech());
 
@@ -59,6 +61,12 @@ public class fortune_teller extends AppCompatActivity {
         cancel.setOnClickListener(view -> {
             Intent intent = new Intent(fortune_teller.this, MainActivity.class);
             startActivity(intent);
+        });
+
+        btnConfirm.setOnClickListener(v -> {
+            Random random = new Random();
+            String fortune = fortunes[random.nextInt(fortunes.length)];
+            tvFortune.setText(fortune);
         });
     }
     private void startSpeech(){
@@ -74,6 +82,7 @@ public class fortune_teller extends AppCompatActivity {
             Toast.makeText(this, "Speech not supported on this device", Toast.LENGTH_SHORT).show();
         }
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -85,7 +94,7 @@ public class fortune_teller extends AppCompatActivity {
             Random random = new Random();
             String fortune = fortunes[random.nextInt(fortunes.length)];
 
-            Toast.makeText(this, fortune, Toast.LENGTH_LONG).show();
+            tvFortune.setText(fortune);
         }
     }
 }

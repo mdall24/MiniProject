@@ -1,6 +1,8 @@
 package com.example.miniproject;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -17,7 +19,9 @@ import java.util.Random;
 public class    eight_ball extends AppCompatActivity implements SensorEventListener {
     private SensorManager sensorManager;
     private Sensor gravitySensor;
-    private TextView tvAnswer; 
+    private TextView tvAnswer;
+
+    private TextView cancel;
 
     private final String[] responses = {
             "Maybe", "Possibly", "Perchance", "Mayhaps", "Perhaps",
@@ -25,6 +29,7 @@ public class    eight_ball extends AppCompatActivity implements SensorEventListe
             "Yes", "Guaranteed", "100 %", "Sure", "Certainly"
     };
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +45,12 @@ public class    eight_ball extends AppCompatActivity implements SensorEventListe
         tvAnswer = findViewById(R.id.tvAnswer);
         Button btnAsk = findViewById(R.id.btnAsk);
         btnAsk.setOnClickListener(v -> showRandomResponse());
+
+        cancel = findViewById(R.id.backBall);
+        cancel.setOnClickListener(view -> {
+            Intent intent = new Intent(eight_ball.this, MainActivity.class);
+            startActivity(intent);
+        });
     }
 
     private void showRandomResponse() {
