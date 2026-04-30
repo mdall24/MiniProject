@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Random;
 
-public class eight_ball extends AppCompatActivity implements SensorEventListener {
+public class    eight_ball extends AppCompatActivity implements SensorEventListener {
     private SensorManager sensorManager;
     private Sensor gravitySensor;
     private TextView tvAnswer;
