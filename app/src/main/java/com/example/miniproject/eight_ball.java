@@ -23,6 +23,8 @@ public class    eight_ball extends AppCompatActivity implements SensorEventListe
 
     private TextView cancel;
 
+    private boolean isShaking = false;
+
     private final String[] responses = {
             "Maybe", "Possibly", "Perchance", "Mayhaps", "Perhaps",
             "No", "Definitely Not", "Negatory", "Never", "Nope",
@@ -74,8 +76,11 @@ public class    eight_ball extends AppCompatActivity implements SensorEventListe
     public void onSensorChanged(SensorEvent event) {
         if (event.sensor.getType() == Sensor.TYPE_GRAVITY) {
             float gravityZ = event.values[2];
-            if (gravityZ < 5.0f) { // phone is tilted significantly
+            if (gravityZ < 5.0f && !isShaking) {
+                isShaking = true;
                 showRandomResponse();
+            } else if (gravityZ >= 5.0f) {
+                isShaking = false;
             }
         }
     }
