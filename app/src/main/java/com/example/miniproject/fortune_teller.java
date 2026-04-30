@@ -33,6 +33,11 @@ public class fortune_teller extends AppCompatActivity {
             "Someone thinks of your more than you know.",
             "Your worries will resolve, when you share what is on your mind.",
             "Kindness will get you to your destination.",
+            "A stranger will guide you to the right choice soon.",
+            "Your dreams may seem out of reach, but do not give up! Stand on your toes and reach further!",
+            "It will happen when you least expect it.",
+            "Patience will be needed in your near future.",
+            "Beware of the stranger you'll meet at dusk."
     };
 
     @Override
