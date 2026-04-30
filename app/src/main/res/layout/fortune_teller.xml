@@ -5,17 +5,28 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".fortune_teller">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="250dp"
+        android:layout_height="317dp"
+        app:srcCompat="@drawable/fortunetellerball"
+        tools:layout_editor_absoluteX="80dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/tvFortune"
         android:layout_width="340dp"
         android:layout_height="114dp"
+        android:gravity="center"
         android:text="@string/ask"
         android:textSize="20sp"
-        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/typeText"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.15" />
@@ -24,37 +35,38 @@
         android:id="@+id/typeText"
         android:layout_width="235dp"
         android:layout_height="60dp"
-        android:layout_marginBottom="20dp"
         android:ems="10"
         android:hint="@string/type"
         android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@+id/tvFortune"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/btnConfirm"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFortune" />
 
     <Button
         android:id="@+id/btnConfirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
         android:text="Confirm"
-        app:layout_constraintTop_toBottomOf="@+id/typeText"
         app:layout_constraintBottom_toTopOf="@+id/or"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/typeText" />
 
     <TextView
         android:id="@+id/or"
         android:layout_width="26dp"
         android:layout_height="30dp"
-        android:layout_marginBottom="36dp"
         android:text="@string/or"
         android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@+id/btnConfirm"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/talk"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnConfirm" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/talk"
@@ -62,25 +74,26 @@
         android:layout_height="wrap_content"
         android:contentDescription="Talk"
         app:backgroundTint="@android:color/holo_blue_dark"
-        app:layout_constraintTop_toBottomOf="@+id/or"
         app:layout_constraintBottom_toTopOf="@+id/back"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/or"
         app:srcCompat="@drawable/microphone" />
 
     <TextView
         android:id="@+id/back"
-        android:layout_width="88dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="48dp"
+        android:layout_height="52dp"
         android:clickable="true"
         android:focusable="true"
         android:text="@string/back"
         android:textColor="#9B9898"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/talk"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/talk"
         app:layout_constraintVertical_bias="0.1" />
 
 
