@@ -14,9 +14,10 @@
         android:layout_height="196dp"
         android:contentDescription="TODO"
         app:srcCompat="@drawable/magic8balfront"
-        tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="139dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="100dp"/>
 
     <TextView
         android:id="@+id/tvAnswer"
@@ -25,9 +26,10 @@
         android:gravity="center"
         android:text="Ask a question..."
         android:textSize="22sp"
-        tools:layout_editor_absoluteX="108dp"
-        tools:layout_editor_absoluteY="359dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        android:layout_marginTop="50dp"/>
 
     <Button
         android:id="@+id/btnAsk"
@@ -36,20 +38,24 @@
         android:text="Ask the 8-Ball"
         tools:layout_editor_absoluteX="124dp"
         tools:layout_editor_absoluteY="424dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAnswer"
+        android:layout_marginTop="50dp" />
 
     <TextView
         android:id="@+id/backBall"
-        android:layout_width="72dp"
-        android:layout_height="46dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
         android:clickable="true"
         android:focusable="true"
         android:text="@string/back"
         android:textColor="#9B9898"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.577"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnAsk" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
