@@ -8,17 +8,17 @@
     tools:context=".fortune_teller">
 
     <TextView
-        android:id="@+id/askQ"
-        android:layout_width="170dp"
-        android:layout_height="31dp"
+        android:id="@+id/tvFortune"
+        android:layout_width="340dp"
+        android:layout_height="114dp"
         android:text="@string/ask"
         android:textSize="20sp"
+        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/typeText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.543"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintVertical_bias="0.15" />
 
     <EditText
         android:id="@+id/typeText"
@@ -28,9 +28,45 @@
         android:ems="10"
         android:hint="@string/type"
         android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@+id/tvFortune"
         app:layout_constraintBottom_toTopOf="@+id/btnConfirm"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="Confirm"
+        app:layout_constraintTop_toBottomOf="@+id/typeText"
+        app:layout_constraintBottom_toTopOf="@+id/or"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/or"
+        android:layout_width="26dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="36dp"
+        android:text="@string/or"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/btnConfirm"
+        app:layout_constraintBottom_toTopOf="@+id/talk"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/talk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Talk"
+        app:backgroundTint="@android:color/holo_blue_dark"
+        app:layout_constraintTop_toBottomOf="@+id/or"
+        app:layout_constraintBottom_toTopOf="@+id/back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/microphone" />
 
     <TextView
         android:id="@+id/back"
@@ -41,56 +77,11 @@
         android:focusable="true"
         android:text="@string/back"
         android:textColor="#9B9898"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/talk"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="185dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/talk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="Talk"
-        app:backgroundTint="@android:color/holo_blue_dark"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/microphone"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="491dp" />
-
-    <TextView
-        android:id="@+id/or"
-        android:layout_width="26dp"
-        android:layout_height="30dp"
-        android:layout_marginBottom="36dp"
-        android:text="@string/or"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/talk"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/btnConfirm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:text="Confirm"
-        app:layout_constraintBottom_toTopOf="@+id/or"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/tvFortune"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:textColor="#000"
-        android:textSize="20sp"
-        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
