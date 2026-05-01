@@ -11,14 +11,14 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="600dp"
-        android:layout_height="600dp"
-        android:layout_marginTop="-200dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="100dp"
         android:contentDescription="TODO"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ball_man" />
+        app:srcCompat="@drawable/magic8balfront" />
 
     <TextView
         android:id="@+id/tvAnswer"
